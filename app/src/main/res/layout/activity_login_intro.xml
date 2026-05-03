@@ -14,12 +14,15 @@
         android:background="@android:color/white">
 
 
-        <ImageView
+        <TextView
             android:id="@+id/iv_logo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="80dp"
-            android:src="@drawable/ic_logo_foodlier"
+            android:layout_marginBottom="50dp"
+            android:text="MUMUK"
+            android:textSize="55sp"
+            android:fontFamily="@font/pretendard_bold"
+            android:textColor="@color/green_300"
             app:layout_constraintBottom_toTopOf="@id/et_id"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />

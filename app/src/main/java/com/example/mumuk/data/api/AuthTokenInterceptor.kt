@@ -9,7 +9,6 @@ class AuthInterceptor(private val context: Context) : Interceptor {
     override fun intercept(chain: Interceptor.Chain): Response {
         val originalRequest = chain.request()
         val urlPath = originalRequest.url.encodedPath
-
         val noAuthPaths = listOf(
             "/api/auth/login",
             "/api/auth/kakao-login"
@@ -18,7 +17,6 @@ class AuthInterceptor(private val context: Context) : Interceptor {
         if (noAuthPaths.any { urlPath.contains(it) }) {
             return chain.proceed(originalRequest)
         }
-
         val token = TokenManager.getAccessToken(context)
 
         return if (token != null) {
