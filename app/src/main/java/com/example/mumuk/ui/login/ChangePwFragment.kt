@@ -51,7 +51,7 @@ class ChangePwFragment : Fragment() {
 
             if (!pwPattern.matches(pw)) {
                 binding.tvPwFormatStatus.apply {
-                    text = "비밀번호 형식에 맞지 않습니다. 영문자, 특수문자, 숫자 조합으로 작성해주세요"
+                    text = "비밀번호 형식이 맞지 않습니다. 영문자, 특수문자, 숫자 조합으로 작성해주세요"
                     setTextColor(resources.getColor(R.color.red, null))
                 }
                 binding.tvPwStatus.text = ""
@@ -79,7 +79,7 @@ class ChangePwFragment : Fragment() {
                             call: Call<CommonResponse>,
                             response: Response<CommonResponse>
                         ) {
-                            if (response.isSuccessful && response.body()?.status == "100 CONTINUE") {
+                            if (response.isSuccessful && response.body()?.status == "200 CONTINUE") {
                                 showPasswordChangedDialog()
                             } else {
                                 Toast.makeText(requireContext(), "비밀번호 재설정 실패: ${response.body()?.message}", Toast.LENGTH_SHORT).show()

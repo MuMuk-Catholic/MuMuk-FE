@@ -22,6 +22,7 @@ import retrofit2.http.PATCH
 import retrofit2.http.POST
 import retrofit2.http.Query
 
+// 로그인 API
 interface AuthApiService {
     @POST("/api/auth/login")
     fun login(@Body request: LoginRequest): Call<LoginResponse>
@@ -76,7 +77,4 @@ interface AuthApiService {
 
     @GET("/api/auth/exists/login-id")
     fun checkLoginIdExists(@Query("value") loginId: String): Call<CommonResponse>
-
-
-
 }
