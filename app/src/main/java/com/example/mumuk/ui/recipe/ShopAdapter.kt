@@ -12,6 +12,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.example.mumuk.data.model.recipe.NaverShoppingItem
 
+//재료 구매 관련
 class ShopAdapter : ListAdapter<NaverShoppingItem, ShopAdapter.ShopViewHolder>(ShopDiffCallback()) {
 
     inner class ShopViewHolder(private val binding: ItemShopBinding) :

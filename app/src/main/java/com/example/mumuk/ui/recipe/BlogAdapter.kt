@@ -13,6 +13,7 @@ import com.example.mumuk.R
 import com.example.mumuk.databinding.ItemBlogBinding
 import com.example.mumuk.data.model.recipe.SearchedBlog
 
+//블로그 크롤링 관련
 class BlogAdapter(private var blogs: List<SearchedBlog>) :
     RecyclerView.Adapter<BlogAdapter.BlogViewHolder>() {
 

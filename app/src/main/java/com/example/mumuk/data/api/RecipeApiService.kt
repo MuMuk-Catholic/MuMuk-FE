@@ -11,7 +11,9 @@ import retrofit2.http.POST
 import retrofit2.http.Part
 import retrofit2.http.Path
 
+//레시피 관련 API
 interface RecipeApiService {
+    // 재료 추천
     @GET("/api/recipe/recommend/ingredient")
     suspend fun getRecommendIngredientRecipes(): BaseResponse<List<RecommendRecipeResponse>>
 

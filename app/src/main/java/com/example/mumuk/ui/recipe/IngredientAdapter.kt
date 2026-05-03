@@ -7,6 +7,7 @@ import com.example.mumuk.data.model.RecipeIngredient
 import com.example.mumuk.databinding.ItemIngredientAvailableBinding
 import com.example.mumuk.databinding.ItemIngredientMissingBinding
 
+// 재료 관련
 class IngredientAdapter(
     private var ingredients: List<RecipeIngredient>
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
