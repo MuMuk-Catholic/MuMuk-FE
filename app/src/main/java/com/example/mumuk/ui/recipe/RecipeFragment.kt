@@ -222,6 +222,7 @@ class RecipeFragment : Fragment() {
         }
     }
 
+    //좋아요 버튼
     private fun updateLikeButton(isLiked: Boolean) {
         binding.imageView7.setImageResource(
             if (isLiked) com.example.mumuk.R.drawable.btn_heart_fill
