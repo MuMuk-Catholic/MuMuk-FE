@@ -88,8 +88,7 @@ class LoginIntroActivity : AppCompatActivity() {
         binding.btnLogin.setOnClickListener {
             val loginId = binding.etId.text.toString()
             val password = binding.etPassword.text.toString()
-
-            Log.d("LoginCheck", "🟡 로그인 시도: ID=[$loginId], PW=[$password]")
+            Log.d("LoginCheck", "🟡 로그인 시도 : ID=[$loginId], PW=[$password]")
 
             var hasError = false
 
@@ -117,7 +116,6 @@ class LoginIntroActivity : AppCompatActivity() {
             api.login(request).enqueue(object : Callback<LoginResponse> {
                 override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
                     Log.d("LoginCheck", "응답 성공 여부: ${response.isSuccessful}")
-                    Log.d("LoginCheck", "응답 코드: ${response.code()}")
 
                     if (response.isSuccessful) {
                         val loginResponse = response.body()
@@ -136,7 +134,7 @@ class LoginIntroActivity : AppCompatActivity() {
                             overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
                             finish() // finish() 추가
                         } else {
-                            Log.e("LoginCheck", "로그인 실패 - 서버 응답은 왔지만 status가 OK가 아니거나 data가 없음")
+                            Log.e("LoginCheck", "로그인 실패 - 서버 응답은 왔지만, status가 OK가 아니거나 data가 없음")
                             showSimpleConfirmDialog(
                                 message = "등록되지 않은 아이디거나,\nID 또는 비밀번호를 \n잘못 입력하였습니다."
                             )
@@ -151,7 +149,6 @@ class LoginIntroActivity : AppCompatActivity() {
                 }
 
                 override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
-                    Log.e("LoginCheck", "네트워크 오류: ${t.message}")
                     showSimpleConfirmDialog(
                         message = "일시적인 오류로 로그인을 할 수 없습니다.\n잠시 후 다시 시도해 주세요."
                     )
