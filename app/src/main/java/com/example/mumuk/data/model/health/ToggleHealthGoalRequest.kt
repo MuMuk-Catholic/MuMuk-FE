@@ -1,5 +1,7 @@
 package com.example.mumuk.data.model.health
 
+import com.google.gson.annotations.SerializedName
+
 data class ToggleHealthGoalRequest(
-    val healthGoalTypeList: List<String>
+    @SerializedName("healthGoalTypeList") val healthGoalTypeList: List<String>
 )

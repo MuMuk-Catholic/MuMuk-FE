@@ -1,12 +1,14 @@
 package com.example.mumuk.data.model.health
 
+import com.google.gson.annotations.SerializedName
+
 data class ToggleHealthGoalResponseData(
-    val healthGoalList: List<HealthGoal>
+    @SerializedName("healthGoalList") val healthGoalList: List<HealthGoal>
 )
 
 data class ToggleHealthGoalResponse(
-    val status: String,
-    val code: String,
-    val message: String,
-    val data: ToggleHealthGoalResponseData
+    @SerializedName("status") val status: String,
+    @SerializedName("code") val code: String,
+    @SerializedName("message") val message: String,
+    @SerializedName("data") val data: ToggleHealthGoalResponseData
 )
