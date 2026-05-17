@@ -1,12 +1,14 @@
 package com.example.mumuk.data.model.allergy
 
+import com.google.gson.annotations.SerializedName
+
 data class AllergyOptionsResponseData(
-    val allergyOptions: List<AllergyOption>
+    @SerializedName("allergyOptions") val allergyOptions: List<AllergyOption>
 )
 
 data class AllergyOptionsResponse(
-    val status: String,
-    val code: String,
-    val message: String,
-    val data: AllergyOptionsResponseData
+    @SerializedName("status") val status: String,
+    @SerializedName("code") val code: String,
+    @SerializedName("message") val message: String,
+    @SerializedName("data") val data: AllergyOptionsResponseData
 )

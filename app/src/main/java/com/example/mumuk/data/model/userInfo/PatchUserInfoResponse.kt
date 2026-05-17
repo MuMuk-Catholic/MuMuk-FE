@@ -1,14 +1,16 @@
 package com.example.mumuk.data.model.userinfo
 
+import com.google.gson.annotations.SerializedName
+
 data class PatchUserInfoResponse(
-    val status: String,
-    val code: String,
-    val message: String,
-    val data: UserInfoData?
+    @SerializedName("status") val status: String,
+    @SerializedName("code") val code: String,
+    @SerializedName("message") val message: String,
+    @SerializedName("data") val data: UserInfoData?
 ) {
     data class UserInfoData(
-        val gender: String?,
-        val height: Int?,
-        val weight: Int?
+        @SerializedName("gender") val gender: String?,
+        @SerializedName("height") val height: Int?,
+        @SerializedName("weight") val weight: Int?
     )
 }

@@ -4,6 +4,7 @@ import com.example.mumuk.data.model.userinfo.PatchUserInfoRequest
 import com.example.mumuk.data.model.userinfo.PatchUserInfoResponse
 import retrofit2.Call
 import retrofit2.http.Body
+import retrofit2.http.GET
 import retrofit2.http.PATCH
 import retrofit2.http.Headers
 
@@ -13,4 +14,7 @@ interface UserInfoApiService {
     fun patchUserInfo(
         @Body request: PatchUserInfoRequest
     ): Call<PatchUserInfoResponse>
+
+    @GET("/api/user-info")
+    fun getUserInfo(): Call<PatchUserInfoResponse>
 }
